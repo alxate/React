@@ -1,93 +1,95 @@
-import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../firebase";
-import "./Register.css"; // 1️⃣ Importa tu CSS
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Register.css"; // Importa el archivo CSS
 
 const Register: React.FC = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [error, setError] = useState<string | null>(null);
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-
-  const validate = () => {
-    if (!email) {
-      setError("El correo es obligatorio");
-      return false;
-    }
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setError("Formato de correo inválido");
-      return false;
-    }
-    if (password.length < 6) {
-      setError("La contraseña debe tener al menos 6 caracteres");
-      return false;
-    }
-    setError(null);
-    return true;
-  };
-
-  const handleRegister = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!validate()) return;
-
-    setLoading(true);
-    try {
-      await createUserWithEmailAndPassword(auth, email, password);
-      setSuccess(true);
-      setEmail("");
-      setPassword("");
-    } catch (err: any) {
-      switch (err.code) {
-        case "auth/email-already-in-use":
-          setError("Este correo ya está registrado");
-          break;
-        case "auth/invalid-email":
-          setError("Correo inválido");
-          break;
-        case "auth/weak-password":
-          setError("Contraseña muy débil");
-          break;
-        default:
-          setError("Error al registrar usuario");
-      }
-    } finally {
-      setLoading(false);
-    }
-  };
-
   return (
-    <form onSubmit={handleRegister} className="register-form">
-      <h2>Registro</h2>
-
-      {error && <div className="error">{error}</div>}
-      {success && <div className="success">¡Usuario registrado!</div>}
-
-      <div className="input-group">
-        <input
-          type="email"
-          placeholder="Correo electrónico"
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          disabled={loading}
-        />
+    <div className="register-page">
+      {/*Boton para volver al Home*/}
+      <div className="top-right">
+        <Link to="/" className="home-button">
+          Volver al Inicio
+        </Link>
       </div>
 
-      <div className="input-group">
-        <input
-          type="password"
-          placeholder="Contraseña"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          disabled={loading}
-        />
-      </div>
+      <header className="register-header">
+        <h1 className="register-title">Crear Cuenta</h1>
+        <p className="register-subtitle">
+          Regístrate para comenzar a gestionar tus servicios
+        </p>
+      </header>
 
-      <button type="submit" disabled={loading}>
-        {loading ? "Registrando..." : "Registrarse"}
-      </button>
-    </form>
+      <main className="register-main">
+        <form className="register-form">
+          <div className="form-group">
+            <label htmlFor="name" className="form-label">
+              Nombre Completo
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              className="form-input"
+              placeholder="Ingresa tu nombre completo"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="email" className="form-label">
+              Correo Electrónico
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              className="form-input"
+              placeholder="Ingresa tu correo"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="password" className="form-label">
+              Contraseña
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              className="form-input"
+              placeholder="Crea una contraseña"
+            />
+          </div>
+
+          <div className="form-group">
+            <label htmlFor="confirmPassword" className="form-label">
+              Confirmar Contraseña
+            </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              className="form-input"
+              placeholder="Confirma tu contraseña"
+            />
+          </div>
+
+          <div className="form-actions">
+            <button type="submit" className="form-button">
+              Registrarse
+            </button>
+            <Link to="/login" className="form-link">
+              ¿Ya tienes cuenta? Inicia Sesión
+            </Link>
+          </div>
+        </form>
+      </main>
+
+      <footer className="register-footer">
+        <p className="footer-text">
+          © 2025 Pintu-Mec. Todos los derechos reservados.
+        </p>
+      </footer>
+    </div>
   );
 };
 
