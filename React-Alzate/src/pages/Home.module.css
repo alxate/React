@@ -1,21 +1,60 @@
-/* Home.module.css */
-.container {
-  padding: 2rem;
-  text-align: center;
-  background-color: #f3f4f6;
-  min-height: 100vh;
+/* Global Styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif; /* Fuente limpia y profesional */
+  background: linear-gradient(180deg, #f3f4f6, #e5e7eb); /* Gradiente suave de gris claro */
+  color: #333; /* Color de texto principal */
+  line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+  -webkit-font-smoothing: antialiased; /* Suavizado de fuentes para navegadores Webkit */
+  -moz-osx-font-smoothing: grayscale; /* Suavizado de fuentes para navegadores Firefox */
 }
 
-.title {
-  font-size: 2.5rem;
-  color: #1f2937;
+/* General Container */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+}
+
+/* Header */
+.header {
+  background: linear-gradient(120deg, #1e3c72, #2a5298); /* Gradiente moderno en tonos azulados */
+  padding: 2.5rem 1rem;
+  text-align: center;
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-bottom: 4px solid #1e3c72;
+  border-radius: 0 0 15px 15px;
+}
+
+.headerImage {
+  max-width: 300px;
+  height: auto;
   margin-bottom: 1rem;
+  border: 4px solid #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  color: #4b5563;
-  margin-bottom: 2rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  margin-top: 1rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+  letter-spacing: 0.8px;
+}
+
+/* Services Section */
+.servicesSection {
+  background: linear-gradient(180deg, #ffffff, #f3f4f6);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 2rem auto;
+  max-width: 1200px;
+  text-align: center;
 }
 
 .cardGrid {
@@ -23,28 +62,103 @@
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
+  margin-top: 2rem;
 }
 
 .card {
   background-color: #ffffff;
   padding: 1.5rem;
-  border-radius: 1rem;
+  border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   max-width: 300px;
-  transition: transform 0.3s ease;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card:hover {
-  transform: scale(1.05);
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .cardTitle {
   font-size: 1.5rem;
-  color: #111827;
+  color: #1e3c72;
   margin-bottom: 0.5rem;
+  font-weight: bold;
 }
 
 .cardText {
   font-size: 1rem;
   color: #6b7280;
+  line-height: 1.5;
+}
+
+/* Call to Action Section */
+.cta {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  padding: 3rem 2rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta h2 {
+  font-size: 2rem;
+  color: #1e3c72;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
+.cta p {
+  font-size: 1.2rem;
+  color: #6b7280;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.ctaButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.ctaButtons .button {
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.ctaButtons .button.primary {
+  background-color: #069fd8;
+}
+
+.ctaButtons .button.primary:hover {
+  background-color: #057bb0;
+  transform: scale(1.05);
+}
+
+.ctaButtons .button.secondary {
+  background-color: #d72a1c;
+}
+
+.ctaButtons .button.secondary:hover {
+  background-color: #b12218;
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  background: linear-gradient(90deg, #1e3c72, #2a5298);
+  color: #ffffff;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  font-size: 0.9rem;
+  border-top: 4px solid #1e3c72;
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
 }

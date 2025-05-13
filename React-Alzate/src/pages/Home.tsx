@@ -5,26 +5,68 @@ import styles from './Home.module.css';
 const Home: React.FC = () => {
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Bienvenidos a HBM_Porcicultura </h1>
-      <p className={styles.subtitle}>Gestión moderna para un futuro agropecuario más eficiente</p>
+      {/* Header */}
+      <header className={styles.header}>
+        <img
+          src="src/assets/images/Titulo-Home.png"
+          alt="Título de Pintumec, especialistas en mecánica y pintura automotriz"
+          className={styles.headerImage}
+        />
+        <p className={styles.subtitle}>Tu taller de confianza en mecánica y pintura automotriz</p>
+      </header>
 
-      <div className={styles.cardGrid}>
-        <div className={styles.card}>
-          <h2 className={styles.cardTitle}>Registro</h2>
-          <p className={styles.cardText}>Crea una cuenta para comenzar a gestionar tus datos</p>
-          <Link to="/register">
-            <button>Ir a Registro</button>
-          </Link>
-        </div>
+      {/* Main Content */}
+      <main>
+        {/* Services Section */}
+        <section className={styles.servicesSection}>
+          <h2>Nuestros Servicios</h2>
+          <div className={styles.cardGrid}>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>Mantenimiento Preventivo</h3>
+              <p className={styles.cardText}>
+                Mantén tu vehículo en óptimas condiciones con nuestros servicios preventivos.
+              </p>
+            </div>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>Reparaciones Mecánicas</h3>
+              <p className={styles.cardText}>
+                Soluciones rápidas y efectivas para cualquier problema mecánico.
+              </p>
+            </div>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>Pintura Automotriz</h3>
+              <p className={styles.cardText}>
+                Dale a tu vehículo un acabado impecable con nuestros servicios de pintura.
+              </p>
+            </div>
+            <div className={styles.card}>
+              <h3 className={styles.cardTitle}>Diagnóstico Computarizado</h3>
+              <p className={styles.cardText}>
+                Detecta problemas con precisión gracias a nuestra tecnología avanzada.
+              </p>
+            </div>
+          </div>
+        </section>
 
-        <div className={styles.card}>
-          <h2 className={styles.cardTitle}>Login</h2>
-          <p className={styles.cardText}>Accede a tu cuenta si ya estás registrado</p>
-          <Link to="/login">
-            <button>Ir a Login</button>
-          </Link>
-        </div>
-      </div>
+        {/* Call to Action Section */}
+        <section className={styles.cta}>
+          <h2>¿Listo para comenzar?</h2>
+          <p>Regístrate o inicia sesión para gestionar tus servicios y agendar tu cita.</p>
+          <div className={styles.ctaButtons}>
+            <Link to="/register">
+              <button className={`${styles.button} ${styles.primary}`}>Crear Cuenta</button>
+            </Link>
+            <Link to="/login">
+              <button className={`${styles.button} ${styles.secondary}`}>Iniciar Sesión</button>
+            </Link>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <footer className={styles.footer}>
+        <p>© 2025 Pintumec. Todos los derechos reservados.</p>
+      </footer>
     </div>
   );
 };
