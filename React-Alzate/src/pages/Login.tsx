@@ -1,5 +1,7 @@
 import React from "react";
 import "./Login.css";
+import ReturnPage from "../pages/ReturnPage";
+
 
 const Login: React.FC = () => {
   return (
@@ -32,6 +34,7 @@ const Login: React.FC = () => {
           ¿No tienes cuenta?
           <a href="/register">Regístrate</a>
         </footer>
+        <ReturnPage />
       </div>
     </div>
   );

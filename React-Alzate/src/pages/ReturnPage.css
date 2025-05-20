@@ -1,0 +1,18 @@
+.return-home-btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.6rem;
+  background: linear-gradient(90deg, #1e3c72 60%, #069fd8 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(30, 60, 114, 0.10);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.return-home-btn:hover {
+  background: linear-gradient(90deg, #2a5298 60%, #057bb0 100%);
+  transform: scale(1.04);
+}

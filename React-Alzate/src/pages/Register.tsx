@@ -1,5 +1,6 @@
 import React from "react";
 import "./Register.css";
+import ReturnPage from "../pages/ReturnPage";
 
 const Register: React.FC = () => {
   return (
@@ -38,6 +39,7 @@ const Register: React.FC = () => {
           ¿Ya tienes cuenta?
           <a href="/login">Inicia sesión</a>
         </footer>
+        <ReturnPage/>
       </div>
     </div>
   );
