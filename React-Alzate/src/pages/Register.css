@@ -1,6 +1,6 @@
 .register-bg {
-  min-height: 50vh;
-  background: linear-gradient(135deg, #ffff #ffff);
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -49,12 +49,22 @@
   gap: 1.1rem;
 }
 
+.register-label-new {
+  text-align: left;
+  color: #1e3c72;
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  margin-top: 0.5rem;
+}
+
 .register-input-new {
   padding: 1rem 1.1rem;
   border: 1.5px solid #cbd5e1;
   border-radius: 10px;
   font-size: 1.08rem;
   background: #f8fafc;
+  color: #1e293b;
   transition: border 0.2s, box-shadow 0.2s;
   box-shadow: 0 2px 8px rgba(30, 60, 114, 0.03);
 }
@@ -83,6 +93,15 @@
   background: linear-gradient(90deg, #057bb0 60%, #1e3c72 100%);
   transform: translateY(-2px) scale(1.04);
   box-shadow: 0 8px 24px rgba(6, 159, 216, 0.15);
+}
+
+.register-error {
+  color: #d72a1c;
+  font-size: 0.98rem;
+  margin-top: -0.8rem;
+  margin-bottom: 0.5rem;
+  text-align: left;
+  padding-left: 2px;
 }
 
 .register-footer-new {

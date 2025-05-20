@@ -1,8 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Register.css";
 import ReturnPage from "../pages/ReturnPage";
+import { validarNombre, validarEmail, validarPassword } from "../utils/validaciones";
 
 const Register: React.FC = () => {
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [errors, setErrors] = useState<{ username?: string; email?: string; password?: string }>({});
+
+  const validate = () => {
+    const newErrors: typeof errors = {};
+    const nombreError = validarNombre(username);
+    const emailError = validarEmail(email);
+    const passwordError = validarPassword(password);
+
+    if (nombreError) newErrors.username = nombreError;
+    if (emailError) newErrors.email = emailError;
+    if (passwordError) newErrors.password = passwordError;
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validate()) {
+      alert("¡Registro exitoso!");
+      // Aquí puedes limpiar el formulario o redirigir
+    }
+  };
+
   return (
     <div className="register-bg">
       <div className="register-card-new">
@@ -12,25 +40,34 @@ const Register: React.FC = () => {
             Únete a nuestra comunidad y accede a todos los servicios.
           </p>
         </header>
-        <form className="register-form-new">
+        <form className="register-form-new" onSubmit={handleSubmit} noValidate>
+          <label className="register-label-new">Nombre completo</label>
           <input
             type="text"
             placeholder="Nombre de usuario"
             className="register-input-new"
-            required
+            value={username}
+            onChange={e => setUsername(e.target.value)}
           />
+          {errors.username && <div className="register-error">{errors.username}</div>}
+          <label className="register-label-new">Correo electrónico</label>
           <input
             type="email"
             placeholder="Correo electrónico"
             className="register-input-new"
-            required
+            value={email}
+            onChange={e => setEmail(e.target.value)}
           />
+          {errors.email && <div className="register-error">{errors.email}</div>}
+          <label className="register-label-new">Contraseña</label>
           <input
             type="password"
             placeholder="Contraseña"
             className="register-input-new"
-            required
+            value={password}
+            onChange={e => setPassword(e.target.value)}
           />
+          {errors.password && <div className="register-error">{errors.password}</div>}
           <button type="submit" className="register-btn-new">
             Registrarse
           </button>
