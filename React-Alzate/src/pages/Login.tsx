@@ -6,7 +6,9 @@ import { validarEmail, validarPassword } from "../utils/validaciones";
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [errors, setErrors] = useState<{ email?: string; password?: string }>({});
+  const [errors, setErrors] = useState<{ email?: string; password?: string }>(
+    {}
+  );
 
   const validate = () => {
     const newErrors: typeof errors = {};
@@ -24,8 +26,16 @@ const Login: React.FC = () => {
     e.preventDefault();
     if (validate()) {
       alert("¡Inicio de sesión exitoso!");
-      // Aquí puedes limpiar el formulario o redirigir
+      // Aquí puedes guardar el usuario en el estado global o redirigir
     }
+  };
+
+  const handleGoogleLogin = () => {
+    alert("Inicio de sesión con Google (simulado)");
+  };
+
+  const handleFacebookLogin = () => {
+    alert("Inicio de sesión con Facebook (simulado)");
   };
 
   return (
@@ -44,7 +54,7 @@ const Login: React.FC = () => {
             placeholder="Correo electrónico"
             className="login-input-new"
             value={email}
-            onChange={e => setEmail(e.target.value)}
+            onChange={(e) => setEmail(e.target.value)}
           />
           {errors.email && <div className="login-error">{errors.email}</div>}
           <label className="login-label-new">Contraseña</label>
@@ -53,13 +63,23 @@ const Login: React.FC = () => {
             placeholder="Contraseña"
             className="login-input-new"
             value={password}
-            onChange={e => setPassword(e.target.value)}
+            onChange={(e) => setPassword(e.target.value)}
           />
-          {errors.password && <div className="login-error">{errors.password}</div>}
+          {errors.password && (
+            <div className="login-error">{errors.password}</div>
+          )}
           <button type="submit" className="login-btn-new">
             Iniciar sesión
           </button>
         </form>
+        <div className="login-social">
+          <button className="login-btn-google" onClick={handleGoogleLogin}>
+            Iniciar sesión con Google
+          </button>
+          <button className="login-btn-facebook" onClick={handleFacebookLogin}>
+            Iniciar sesión con Facebook
+          </button>
+        </div>
         <footer className="login-footer-new">
           ¿No tienes cuenta?
           <a href="/register">Regístrate</a>

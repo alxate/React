@@ -21,8 +21,14 @@
 }
 
 @keyframes fadeIn {
-  from { opacity: 0; transform: translateY(40px);}
-  to { opacity: 1; transform: translateY(0);}
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .register-header-new {
@@ -84,7 +90,7 @@
   font-size: 1.15rem;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 16px rgba(6, 159, 216, 0.10);
+  box-shadow: 0 4px 16px rgba(6, 159, 216, 0.1);
   transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
   margin-top: 0.5rem;
 }
@@ -122,4 +128,42 @@
 .register-footer-new a:hover {
   color: #069fd8;
   text-decoration: underline;
+}
+
+.register-social {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  margin: 1.2rem 0 0.5rem 0;
+}
+
+.register-btn-google {
+  background: #fff;
+  color: #222;
+  border: 1.5px solid #4285f4;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: bold;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+.register-btn-google:hover {
+  background: #4285f4;
+  color: #fff;
+}
+
+.register-btn-facebook {
+  background: #1877f3;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: bold;
+  padding: 0.8rem 0;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.register-btn-facebook:hover {
+  background: #145db2;
 }

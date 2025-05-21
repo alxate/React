@@ -2,24 +2,33 @@
   min-height: 100vh;
   background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  padding-top: 3rem;
 }
 
-.consultar-card {
+.consultar-dashboard {
+  display: flex;
+  gap: 2.5rem;
+  width: 100%;
+  max-width: 950px;
+}
+
+.consultar-card,
+.consultar-result {
   background: #fff;
   border-radius: 18px;
   box-shadow: 0 8px 32px rgba(30, 60, 114, 0.13);
   padding: 2.5rem 2rem;
-  max-width: 420px;
-  width: 100%;
-  text-align: center;
+  width: 400px;
+  min-height: 340px;
   border: 1.5px solid #e0e7ff;
 }
 
 .consultar-title {
   color: #1e3c72;
   margin-bottom: 1.2rem;
+  text-align: left;
 }
 
 .consultar-input {
@@ -30,7 +39,7 @@
   background: #f8fafc;
   color: #1e293b;
   margin-bottom: 1rem;
-  width: 80%;
+  width: 100%;
   outline: none;
 }
 
@@ -43,7 +52,7 @@
   font-size: 1.08rem;
   font-weight: bold;
   cursor: pointer;
-  margin: 0.5rem 0.5rem 0 0.5rem;
+  margin: 0.5rem 0.5rem 0 0;
 }
 
 .consultar-btn:hover {
@@ -52,6 +61,31 @@
 
 .consultar-historial {
   text-align: left;
-  display: inline-block;
-  margin: 0 auto;
+  margin: 0.5rem 0 0 0;
+  padding-left: 1rem;
+}
+
+.consultar-result h2 {
+  color: #2a5298;
+  margin-bottom: 0.5rem;
+}
+
+.consultar-result {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+@media (max-width: 900px) {
+  .consultar-dashboard {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .consultar-card,
+  .consultar-result {
+    width: 95vw;
+    min-width: unset;
+    max-width: 500px;
+  }
 }
