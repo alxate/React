@@ -1,0 +1,57 @@
+.consultar-bg {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e0e7ff 0%, #f3f4f6 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.consultar-card {
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(30, 60, 114, 0.13);
+  padding: 2.5rem 2rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  border: 1.5px solid #e0e7ff;
+}
+
+.consultar-title {
+  color: #1e3c72;
+  margin-bottom: 1.2rem;
+}
+
+.consultar-input {
+  padding: 0.9rem 1.1rem;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  background: #f8fafc;
+  color: #1e293b;
+  margin-bottom: 1rem;
+  width: 80%;
+  outline: none;
+}
+
+.consultar-btn {
+  padding: 0.8rem 1.5rem;
+  background: linear-gradient(90deg, #069fd8 60%, #1e3c72 100%);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.08rem;
+  font-weight: bold;
+  cursor: pointer;
+  margin: 0.5rem 0.5rem 0 0.5rem;
+}
+
+.consultar-btn:hover {
+  background: linear-gradient(90deg, #057bb0 60%, #1e3c72 100%);
+}
+
+.consultar-historial {
+  text-align: left;
+  display: inline-block;
+  margin: 0 auto;
+}
