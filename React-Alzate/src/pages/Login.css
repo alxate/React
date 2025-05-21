@@ -147,10 +147,23 @@
   padding: 0.8rem 0;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+
 .login-btn-google:hover {
   background: #4285f4;
   color: #fff;
+}
+
+.login-btn-google img,
+.login-btn-facebook img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: inline-block;
 }
 
 .login-btn-facebook {
@@ -163,7 +176,12 @@
   padding: 0.8rem 0;
   cursor: pointer;
   transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+
 .login-btn-facebook:hover {
   background: #145db2;
 }

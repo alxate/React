@@ -147,10 +147,22 @@
   padding: 0.8rem 0;
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+
 .register-btn-google:hover {
   background: #4285f4;
   color: #fff;
+}
+
+.register-btn-google img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: inline-block;
 }
 
 .register-btn-facebook {
@@ -163,7 +175,19 @@
   padding: 0.8rem 0;
   cursor: pointer;
   transition: background 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
+
 .register-btn-facebook:hover {
   background: #145db2;
+}
+
+.register-btn-facebook img {
+  width: 22px;
+  height: 22px;
+  object-fit: contain;
+  display: inline-block;
 }

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./Login.css";
 import ReturnPage from "../pages/ReturnPage";
 import { validarEmail, validarPassword } from "../utils/validaciones";
-
+import googleIcon from "../assets/icons/google.png";
+import facebookIcon from "../assets/icons/facebook.png"; 
 const Login: React.FC = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -74,9 +75,29 @@ const Login: React.FC = () => {
         </form>
         <div className="login-social">
           <button className="login-btn-google" onClick={handleGoogleLogin}>
+            <img
+              src={googleIcon}
+              alt="Google"
+              style={{
+                width: 22,
+                height: 22,
+                marginRight: 8,
+                verticalAlign: "middle",
+              }}
+            />
             Iniciar sesión con Google
           </button>
           <button className="login-btn-facebook" onClick={handleFacebookLogin}>
+            <img
+              src={facebookIcon}
+              alt="Facebook"
+              style={{
+                width: 22,
+                height: 22,
+                marginRight: 8,
+                verticalAlign: "middle",
+              }}
+            />
             Iniciar sesión con Facebook
           </button>
         </div>

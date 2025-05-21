@@ -6,6 +6,8 @@ import {
   validarEmail,
   validarPassword,
 } from "../utils/validaciones";
+import googleIcon from '../assets/icons/google.png';
+import facebookIcon from '../assets/icons/facebook.png';
 
 const Register: React.FC = () => {
   const [username, setUsername] = useState("");
@@ -112,17 +114,27 @@ const Register: React.FC = () => {
             className="register-btn-google"
             onClick={handleGoogleRegister}
           >
+            <img
+              src={googleIcon}
+              alt="Google"
+              style={{ width: 20, height: 20, marginRight: 8, verticalAlign: 'middle' }}
+            />
             Registrarse con Google
           </button>
           <button
             className="register-btn-facebook"
             onClick={handleFacebookRegister}
           >
+            <img
+              src={facebookIcon}
+              alt="Facebook"
+              style={{ width: 20, height: 20, marginRight: 8, verticalAlign: 'middle' }}
+            />
             Registrarse con Facebook
           </button>
         </div>
         <footer className="register-footer-new">
-          ¿Ya tienes cuenta?
+          ¿Ya tienes cuenta?{" "}
           <a href="/login">Inicia sesión</a>
         </footer>
         <ReturnPage />
