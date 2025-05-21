@@ -20,7 +20,7 @@ body {
 /* Header */
 .header {
   background: linear-gradient(120deg, #1e3c72, #2a5298); /* Gradiente moderno en tonos azulados */
-  padding: 2.5rem 1rem;
+  padding: 2.5px;
   text-align: center;
   color: #ffffff;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
